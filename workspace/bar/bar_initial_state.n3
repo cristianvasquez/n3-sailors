@@ -1,0 +1,13 @@
+# Applications already agree on this vocabulary
+@prefix ex: <http://example.org#> .
+@prefix ex_1: <http://example.org/1#> .
+@prefix ex_2: <http://example.org/2#> .
+@prefix ex_3: <http://example.org/3#> .
+@prefix sea: <http://example.org/instances/> .
+@prefix sea_1: <http://example.org/instances/1/> .
+@prefix sea_2: <http://example.org/instances/2/> .
+@prefix sea_3: <http://example.org/instances/3/> .
+
+# Initial state
+sea:Bar a ex:Blackboard ;
+    ex:hasVisitor sea:greekSailor .

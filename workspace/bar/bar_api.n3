@@ -1,0 +1,44 @@
+# Applications already agree on this vocabulary
+@prefix ex: <http://example.org#> .
+@prefix ex_1: <http://example.org/1#> .
+@prefix ex_2: <http://example.org/2#> .
+@prefix ex_3: <http://example.org/3#> .
+@prefix sea: <http://example.org/instances/> .
+@prefix sea_1: <http://example.org/instances/1/> .
+@prefix sea_2: <http://example.org/instances/2/> .
+@prefix sea_3: <http://example.org/instances/3/> .
+
+# Join the bar, (changes the state of the blackboard)
+{
+    ?x a ex:Sailor
+}
+=>
+{
+    # How do I define this?
+}.
+
+
+# Show current sailors
+{
+    _: ex:hasVisitor ?sailor .
+}
+=>
+{
+    # How do I define this?
+}.
+
+
+# Show creature images
+{
+  ?creature a ex:Creature .
+  ?creature ex:hasImage ?image.
+}
+=>
+{
+ _:request http:methodName "GET";
+            http:requestURI ?thumbnail;
+            http:resp [ http:body ?image ].
+  ?creature dbpedia-owl:thumbnail ?image.
+  ?image a dbpedia:Image .
+}.
+

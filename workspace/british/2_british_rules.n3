@@ -1,0 +1,42 @@
+# Sailor 2 (British Isles)
+# 
+# * These creatures are called mermaids
+# * They live in the sea
+# * They are woman
+# * They can be giant
+# * They don't have immortal soul
+# * They do have fish-like tail
+
+# Applications already agree on this vocabulary
+@prefix ex: <http://example.org#> .
+
+# A vocabulary that makes sense to the British sailor.
+@prefix ex_2: <http://example.org/2#> .
+
+# Instance space which is shared.
+@prefix sea: <http://example.org/instances/> .
+
+# A private space of the British sailor .
+@prefix sea_3: <http://example.org/instances/2/> .
+
+# A mermaid according to the British sailor
+{
+    ?mermaid a ex_2:Mermaid .
+}
+=>
+{
+    ?mermaid a ex:Creature ;
+        ex:name "mermaid" ;
+        ex:livesIn sea:Sea ;
+        a ex:Woman ;
+        ex:canBe sea:giant ;
+        ex:hasImmortalSoul false ;
+        ex:hasFishLikeTail true .
+} .
+
+
+# The sailor of the british isles also has knowledge about the sea creatures from distinct islands, Merrow, Selkie and Knuckers.
+# Source: https://exemplore.com/cryptids/Merrows-Selkies-and-Kelpies-Irish-and-Scottish-Underwater-Creatures-Like-the-Mermaid
+# TODO add the Selkie, that can change its shape. https://www.wikiwand.com/en/Selkie
+
+

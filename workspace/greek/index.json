@@ -1,0 +1,27 @@
+{
+  "@context": {
+    "@vocab": "http://josd.github.io/fluid#",
+    "hydra": "http://www.w3.org/ns/hydra/core#",
+    "gps": "http://josd.github.io/fluid/gps/gps-schema#",
+    "this": "http://localhost/ephemereal#"
+  },
+  "@type": [
+    "this:AnnotationSpace"
+  ],
+  "meta:operation":[
+    {
+      "operation":"All",
+      "@type": [
+        "this:EyeOperation"
+      ],
+      "input":{
+        "data":[
+          "."
+        ],
+        "query":[
+          "file://resources/bar/all.n3"
+        ]
+      }
+    }
+  ]
+}

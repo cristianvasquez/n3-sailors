@@ -1,0 +1,42 @@
+# Sailor 3 (Slavic)
+# 
+# * These creatures are called rusalkas
+# * They live in the sea
+# * They are woman
+# * They do not have a fish-like tail
+# * They are beautiful young women with long green hair
+
+# Applications already agree on this vocabulary
+@prefix ex: <http://example.org#>.
+
+# A vocabulary that makes sense to the Slavic sailor.
+@prefix ex_3: <http://example.org/3#>.
+
+# Instance space which is shared.
+@prefix sea: <http://example.org/instances/>.
+
+# A private space of the Slavic sailor .
+@prefix sea_3: <http://example.org/instances/3/> .
+
+# A mermaid according to the Slavic sailor,  Note that Slavic prefers the YoungWoman category
+{
+    ?mermaid a ex_3:Vuzhalka ;
+}
+=>
+{
+	?mermaid a ex:Creature ;
+			ex:name "Vuzhalka" ;
+			ex:livesIn sea:Sea ;
+			ex:hasFishLikeTail false ;
+			a ex_3:YoungWoman ;
+			ex:has sea:LongGreenHair ;
+} .
+
+# Slavic mapping rules
+{
+    ?woman a ex_3:YoungWoman ;
+}
+=>
+{
+	?woman a ex:Woman ;
+} .

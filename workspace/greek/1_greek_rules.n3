@@ -1,0 +1,46 @@
+
+# Sailor 1 (Greek)
+#
+# * These creatures are called seirenes
+# * They live in the sea
+# * They are woman
+# * They have beautiful and long hair
+# * They have enchanting voices
+# * They do have fish-like tail
+
+# Applications already agree on this vocabulary
+@prefix ex: <http://example.org#> .
+
+# A vocabulary that makes sense to the Greek sailor.
+@prefix ex_1: <http://example.org/1#> .
+
+# Instance space which is shared.
+@prefix sea: <http://example.org/instances/> .
+
+# A private space of the Greek sailor .
+@prefix sea_1: <http://example.org/instances/1/> .
+
+# A mermaid according to the Greek sailor
+{
+    ?mermaid a ex_1:Seirene .
+}
+=>
+{
+	?mermaid a ex:Creature ;
+        ex:name "seirene" ;
+        ex:livesIn sea:Sea ;
+        a ex:Woman ;
+        ex:has sea:BeautifulLongHair ;
+        ex:has sea:EnchantingVoice ;
+        ex:hasFishLikeTail true .
+} .
+
+# For the greek, there are also Merman
+{
+    ?merman a ex_1:Merman ;
+}
+=>
+{
+	?merman a ex:Creature ;
+        a ex:Man .
+} .

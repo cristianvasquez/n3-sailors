@@ -1,0 +1,42 @@
+@prefix ofs: <http://f4w.restdesc.org/demo/offset#>.
+@prefix http: <http://www.w3.org/2011/http#>.
+@prefix tmpl: <http://purl.org/restdesc/http-template#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix util: <http://f4w.restdesc.org/util#>.
+@prefix rest: <http://restdesc.org/rest#>.
+@prefix prov: <http://www.w3.org/ns/prov#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix math: <http://www.w3.org/2000/10/swap/math#>.
+@prefix auth: <http://f4w.restdesc.org/demo/authorization#>.
+@prefix prolog: <http://eulersharp.sourceforge.net/2003/03swap/prolog#>.
+@prefix list: <http://www.w3.org/2000/10/swap/list#>.
+@prefix json: <http://restdesc.org/json#>.
+
+# Sailor 1 (British Isles)
+
+# Applications already agree on this vocabulary
+@prefix ex: <http://example.org#> .
+
+# A vocabulary that makes sense to the British sailor.
+@prefix ex_2: <http://example.org/2#> .
+
+# Instance space which is shared.
+@prefix sea: <http://example.org/instances/> .
+
+# A private space of the British sailor .
+@prefix sea_2: <http://example.org/instances/2/> .
+
+sea:britishSailor a ex:Sailor ;
+    ex:owns sea:britishSailorTravelLog .
+
+sea:britishSailorTravelLog a ex:AnnotationSpace ;
+	ex:commitsTo sea:Bar .
+
+sea_2:annotation_2 a ex:Annotation ;
+	ex:source sea:britishSailorTravelLog ;
+	ex:target sea:mermaid_2 .
+
+# Note this mermaid has 2 tails, for some sailors this doesn't qualify as fishLike tail.
+sea:mermaid_2 a ex_2:Mermaid ;
+    ex_2:hasTwoTails true ;
+    ex:hasImage <http://www.mookychick.co.uk/wp-content/uploads/2017/05/mermaid-myths.jpg> .
